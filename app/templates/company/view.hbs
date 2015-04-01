@@ -1,10 +1,64 @@
-<div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        {{#link-to 'company.index'}}{{fa-icon "chevron-left" border=true title="Back"}}Back{{/link-to}}
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                {{#link-to 'company.index' tagName="span"}}{{fa-icon "chevron-left" border=true title="Back"}}Back{{/link-to}}
+            </div>
+            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                <h3 class="panel-title">
+                {{model.name}}
+                </h3>
+            </div>
+            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                <span {{action "toggleEditing"}}>{{fa-icon "pencil" border=true pull="right"}}</span>
+            </div>
+        </div>
     </div>
-</div>
-<div class="row">	
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        {{model.name}}
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                {{#if isEditing}}
+	                {{#em-form model=model submit_button=isEditing action="saveCompany" v_icons=true form_layout="horizontal"}}
+	                {{em-input property="name" label="Company Name"}}
+	                {{em-input property="type" label="Type"}}
+	                {{em-input property="description" label="Description"}}
+	                <div class="row">
+	                	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+	                		<div class="panel panel-info">
+	                			  <div class="panel-heading">
+	                					<h3 class="panel-title">Address</h3>
+	                			  </div>
+	                			  <div class="panel-body">
+	                					{{em-input property="address.street1" placeholder="Street 1"}}
+	                					{{em-input property="address.street2" placeholder="Street 2"}}
+	                					{{em-input property="address.city" placeholder="City"}}
+	                					{{em-input property="address.state" placeholder="State"}}
+	                					{{em-input property="address.zip" placeholder="Zip"}}
+	                					{{em-input property="address.lat" placeholder="Latitude"}}
+	                					{{em-input property="address.lon" placeholder="Longitude"}}
+	                					{{em-input property="address.type" placeholder="Type"}}
+	                					{{em-input property="address.description" placeholder="Description"}}
+
+	                			  </div>
+	                		</div>
+	                	</div>
+	                	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+	                		<div class="panel panel-info">
+	                			  <div class="panel-heading">
+	                					<h3 class="panel-title">Phones</h3>
+	                			  </div>
+	                			  <div class="panel-body">
+	                					Panel content
+	                			  </div>
+	                		</div>
+	                	</div>
+	                </div>
+	                {{/em-form}}
+                {{else}}
+						
+                {{/if}}
+
+            </div>
+        </div>
     </div>
 </div>
