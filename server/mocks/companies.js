@@ -10,7 +10,7 @@ module.exports = function(app) {
         "name": "Alpha Company",
         "type": "Restaraunt",
         "description": "An eatery",
-        "created": 2013-03-01,
+        "created": '2013-02-08T09:30:26',
         "address": 1 ,
         "phone": [ 1 ]
       },
@@ -20,7 +20,7 @@ module.exports = function(app) {
         "name": "Bravo Company",
         "type": "Retail",
         "description": "A Shop",
-        "created": 2013-03-01,
+        "created": '2013-02-08T09:30:26',
         "address": 2 ,
         "phone": [ 2 ]
       },
@@ -30,7 +30,7 @@ module.exports = function(app) {
         "name": "Charlie Company",
         "type": "School",
         "description": "A College",
-        "created": 2013-03-01,
+        "created": '2013-02-08T09:30:26',
         "address": 3 ,
         "phone": [ 3, 4 ]
       }],
