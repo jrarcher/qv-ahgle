@@ -8,7 +8,7 @@ export default DS.Model.extend({
 	type: attr('string'),
 	description: attr('string'),
 	created: attr('date'),
-	address: DS.belongsTo('address'),
+	address: DS.belongsTo('address', {async:true}),
 	phone: DS.hasMany('phone', {embedded: 'always'}),
 	prettyCreated: function(){
 		return moment(this.get('created')).format('M/D/YYYY'); 

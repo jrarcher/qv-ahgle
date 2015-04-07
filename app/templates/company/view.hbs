@@ -2,7 +2,7 @@
     <div class="panel-heading">
         <div class="row">
             <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-                {{#link-to 'company.index' tagName="span"}}{{fa-icon "chevron-left" border=true title="Back"}}Back{{/link-to}}
+                {{#link-to 'company.index' tagName="span"}}{{fa-icon "chevron-left" title="Back"}}Back{{/link-to}}
             </div>
             <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
                 <h3 class="panel-title">
@@ -10,55 +10,101 @@
                 </h3>
             </div>
             <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-                <span {{action "toggleEditing"}}>{{fa-icon "pencil" border=true pull="right"}}</span>
+                {{#link-to 'company.edit' tagName="span"}}{{fa-icon "pencil" border=true pull="right"}}{{/link-to}}
             </div>
         </div>
     </div>
     <div class="panel-body">
         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                {{#if isEditing}}
-	                {{#em-form model=model submit_button=isEditing action="saveCompany" v_icons=true form_layout="horizontal"}}
-	                {{em-input property="name" label="Company Name"}}
-	                {{em-input property="type" label="Type"}}
-	                {{em-input property="description" label="Description"}}
-	                <div class="row">
-	                	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-	                		<div class="panel panel-info">
-	                			  <div class="panel-heading">
-	                					<h3 class="panel-title">Address</h3>
-	                			  </div>
-	                			  <div class="panel-body">
-	                					{{em-input property="address.street1" placeholder="Street 1"}}
-	                					{{em-input property="address.street2" placeholder="Street 2"}}
-	                					{{em-input property="address.city" placeholder="City"}}
-	                					{{em-input property="address.state" placeholder="State"}}
-	                					{{em-input property="address.zip" placeholder="Zip"}}
-	                					{{em-input property="address.lat" placeholder="Latitude"}}
-	                					{{em-input property="address.lon" placeholder="Longitude"}}
-	                					{{em-input property="address.type" placeholder="Type"}}
-	                					{{em-input property="address.description" placeholder="Description"}}
-
-	                			  </div>
-	                		</div>
-	                	</div>
-	                	<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-	                		<div class="panel panel-info">
-	                			  <div class="panel-heading">
-	                					<h3 class="panel-title">Phones</h3>
-	                			  </div>
-	                			  <div class="panel-body">
-	                					Panel content
-	                			  </div>
-	                		</div>
-	                	</div>
-	                </div>
-	                {{/em-form}}
-                {{else}}
-						
-                {{/if}}
-
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Type</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static">{{model.type}}</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Description</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static">{{model.description}}</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Parent</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static">
+                            {{#if model.parent}}
+                                {{model.parent}}
+                            {{else}}
+                                None
+                            {{/if}}
+                        </p>
+                    </div>
+                </div>
+            </form>                
             </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <div class="panel panel-primary">
+                      <div class="panel-heading">
+                            <h3 class="panel-title">Address</h3>
+                      </div>
+                      <div class="panel-body">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <span>{{model.address.description}}</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <span>{{model.address.type}}</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <span>{{model.address.street1}}</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <span>{{model.address.street2}}</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <span>{{model.address.cityState}}</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <span>{{model.address.zip}}</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <span>{{model.address.country}}</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                    <span>Lat: {{model.address.lat}}</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                    <span>Lon: {{model.address.lon}}</span>
+                                </div>
+                            </div>
+                      </div>
+                </div>
+            </div>
+
         </div>
+    </div>
+</div>
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">Statistics</h3>
+    </div>
+    <div class="panel-body">
+        Information about company usage and stats
     </div>
 </div>

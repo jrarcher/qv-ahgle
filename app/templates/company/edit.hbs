@@ -1,16 +1,50 @@
 <div class="panel panel-primary">
-	  <div class="panel-heading">
-	  	<div class="row">
-	  		<div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
-	  			<h3 class="panel-title">{{model.name}}</h3>	
-	  		</div>
-	  		<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-	  			
-	  		</div>
-	  	</div>
-			
-	  </div>
-	  <div class="panel-body">
-			Panel content
-	  </div>
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
+                <h3 class="panel-title">{{model.name}}</h3>
+            </div>
+            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+
+            </div>
+        </div>
+
+    </div>
+    <div class="panel-body">
+        {{#em-form model=model submit_button=isEditing v_icons=true form_layout="horizontal"}}
+        {{em-input property="name" label="Company Name"}}
+        {{em-input property="type" label="Type"}}
+        {{em-input property="description" label="Description"}}
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Address</h3>
+                    </div>
+                    <div class="panel-body">
+                        {{em-input property="address.street1" placeholder="Street 1"}}
+                        {{em-input property="address.street2" placeholder="Street 2"}}
+                        {{em-input property="address.city" placeholder="City"}}
+                        {{em-input property="address.state" placeholder="State"}}
+                        {{em-input property="address.zip" placeholder="Zip"}}
+                        {{em-input property="address.lat" placeholder="Latitude"}}
+                        {{em-input property="address.lon" placeholder="Longitude"}}
+                        {{em-input property="address.type" placeholder="Type"}}
+                        {{em-input property="address.description" placeholder="Description"}}
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Phones</h3>
+                    </div>
+                    <div class="panel-body">
+                        Panel content
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/em-form}}
+    </div>
 </div>

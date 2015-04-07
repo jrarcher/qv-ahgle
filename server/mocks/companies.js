@@ -10,7 +10,7 @@ module.exports = function(app) {
         "name": "Alpha Company",
         "type": "Restaraunt",
         "description": "An eatery",
-        "created": null,
+        "created": 2013-03-01,
         "address": 1 ,
         "phone": [ 1 ]
       },
@@ -20,7 +20,7 @@ module.exports = function(app) {
         "name": "Bravo Company",
         "type": "Retail",
         "description": "A Shop",
-        "created": null,
+        "created": 2013-03-01,
         "address": 2 ,
         "phone": [ 2 ]
       },
@@ -30,7 +30,7 @@ module.exports = function(app) {
         "name": "Charlie Company",
         "type": "School",
         "description": "A College",
-        "created": null,
+        "created": 2013-03-01,
         "address": 3 ,
         "phone": [ 3, 4 ]
       }],
@@ -39,7 +39,7 @@ module.exports = function(app) {
         "street1": "111 Main street",
         "street2": "Suite A",
         "city": "Austin",
-        "state": 123,
+        "state": "TX",
         "zip": "78701",
         "country": "US",
         "lat": "foo",
@@ -52,7 +52,7 @@ module.exports = function(app) {
         "street1": "222 Main street",
         "street2": "Suite B",
         "city": "Beaumont",
-        "state": 123,
+        "state": "TX",
         "zip": "78702",
         "country": "US",
         "lat": "foo",
@@ -61,11 +61,11 @@ module.exports = function(app) {
         "description": "Main"
       },
       {
-        "id": 1,
+        "id": 3,
         "street1": "333 Main street",
         "street2": "Suite C",
         "city": "Cedar Park",
-        "state": 123,
+        "state": "TX",
         "zip": "78703",
         "country": "US",
         "lat": "foo",
