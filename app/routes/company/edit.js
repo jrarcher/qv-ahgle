@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-	model:function(){
-		return this.modelFor('company.view');
+	model:function(params){
+		return this.store.find('company', params.id);
 	}
 });
