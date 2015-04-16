@@ -75,43 +75,31 @@ module.exports = function(app) {
       }],
       "phones": [{
         "id": 1,
-        "area": "512",
-        "prefix": "111",
-        "line": "1111",
-        "ext": "1",
+        "num": "5121111111",
+        "ext": null,
         "type": "Main",
-        "country": "US",
-        "owner": "foo"
+        "country": "US"
       },
       {
         "id": 2,
-        "area": "512",
-        "prefix": "222",
-        "line": "2222",
+        "num": "5122222222",
         "ext": "2",
         "type": "Main",
-        "country": "US",
-        "owner": "foo"
+        "country": "US"
       },
       {
         "id": 3,
-        "area": "512",
-        "prefix": "333",
-        "line": "333",
-        "ext": "3333",
+        "num": "5123333333",
+        "ext": "3",
         "type": "Main",
-        "country": "US",
-        "owner": "foo"
+        "country": "US"
       },
       {
         "id": 4,
-        "area": "512",
-        "prefix": "444",
-        "line": "4444",
+        "num": "5124444444",
         "ext": "4",
         "type": "Backup",
-        "country": "US",
-        "owner": "foo"
+        "country": "US"
       }]
     });
   });
