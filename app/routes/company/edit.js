@@ -15,8 +15,7 @@ export default Ember.Route.extend({
 				that.transitionTo('company.view', model.get('id'));
 			},function(){
 				//FAIL
-			})
-
+			});
 		}
 	}
 });
