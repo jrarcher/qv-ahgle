@@ -16,14 +16,18 @@ Router.map(function() {
 		});
 	});
 	this.resource('user', function() {
-		this.route('view', path: '/:id'),
+		this.route('view', {
+			path: '/:id'
+		}),
 		this.route('new'),
 		this.route('edit', {
 			path: '/:id/edit'
 		});
 	});
 	this.resource('survey', function() {
-		this.route('view', path: '/:id'),
+		this.route('view', {
+			path: '/:id'
+		}),
 		this.route('new'),
 		this.route('edit', {
 			path: '/:id/edit'
