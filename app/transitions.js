@@ -5,4 +5,11 @@ export default function(){
     this.use('toLeft'),
     this.reverse('toRight')
   );
+
+  this.transition(
+  	this.fromRoute('company.index'),
+  	this.toRoute('company.new'),
+  	this.use('toLeft'),
+  	this.reverse('toRight')
+  	);
 }
