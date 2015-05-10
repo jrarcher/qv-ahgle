@@ -12,4 +12,11 @@ export default function(){
   	this.use('toLeft'),
   	this.reverse('toRight')
   	);
+
+  this.transition(
+    this.fromRoute('user.index'),
+    this.toRoute('user.view'),
+    this.use('toLeft'),
+    this.reverse('toRight')
+    );
 }

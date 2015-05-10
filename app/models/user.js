@@ -8,7 +8,7 @@ default DS.Model.extend({
 	username: attr('string'),
 	pass: attr('string'),
 	passAgain: attr('string'),
-	gender: attr('number'),
+	gender: attr('string'),
 	birth: attr('date'),
 	points: attr('number', {
 		defaultValue: 0
