@@ -33,32 +33,13 @@ default DS.Model.extend({
 		var gender = this.get('gender');
 		return gender >= 0 && gender <= 2;
 	}.property('gender'),
-	birthIsValid: function() {
-		var startYear = moment().subtract('100', 'years'),
-			endYear = moment().subtract('18', 'years'),
-			birth = moment(this.get('birth'));
-		return birth >= startYear && birth <= endYear;
-	}.property('birth'),
+	// birthIsValid: function() {
+	// 	var startYear = moment().subtract('100', 'years'),
+	// 		endYear = moment().subtract('18', 'years'),
+	// 		birth = moment(this.get('birth'));
+	// 	return birth >= startYear && birth <= endYear;
+	// }.property('birth'),
 	isValidUser: Em.computed.and('usernameIsValid', 'passwordIsValid', 'genderIsValid', 'birthIsValid'),
-	prettyBirth: function() {
-		return moment(this.get('birth')).format('M/D/YYYY');
-	}.property('birth'),
-	prettyCreated: function() {
-		return moment(this.get('created')).format('M/D/YYYY');
-	}.property('created'),
-	prettyGender: function() {
-		var ret;
-		switch (this.get('gender')) {
-			case 0:
-				ret = "Female";
-				break;
-			case 1:
-				ret = "Male";
-				break;
-			case 2:
-				ret = "Other";
-				break;
-		}
-		return ret;
-	}.property('gender')
+	prettyBirth: moment('birth', 'MM/DD/YYYY'),
+	prettyCreated: moment('created', 'MM/DD/YYYY')
 });

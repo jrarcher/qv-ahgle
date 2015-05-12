@@ -1,1 +1,94 @@
-<span>VIEW USER</span>
+<div class="panel panel-primary">
+	  <div class="panel-heading">
+	  	<div class="row">
+	  		<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+	  			{{#link-to 'user.index' tagName="span"}}{{fa-icon "chevron-left" title="Back"}}Back{{/link-to}}
+	  		</div>
+	  		<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+	  			<h3 class="panel-title">{{model.username}}</h3>	
+	  		</div>
+	  		<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+	  			{{#link-to 'user.edit' model.id tagName="span"}}{{fa-icon "pencil" border=true pull="right"}}{{/link-to}}
+	  		</div>
+	  	</div>
+			
+	  </div>
+	  <div class="panel-body">
+			<div class="row">
+				<!-- Column 1 -->
+				<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+					<form class="form-horizontal">
+							<div class="form-group">
+								<label class="col-sm-2 control-label">Birthdate</label>
+                        <div class="col-sm-10">
+                            <p class="form-control-static">{{model.prettyBirth}}</p>
+                        </div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label">Created</label>
+                        <div class="col-sm-10">
+                            <p class="form-control-static">{{model.prettyCreated}}</p>
+                        </div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label">Verified</label>
+                        <div class="col-sm-10">
+                            <p class="form-control-static">{{model.verified}}</p>
+                        </div>
+							</div>
+					</form>
+				</div>
+				<!-- End Column 1 -->
+				<!-- Column 2 -->
+				<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+					<div class="panel panel-primary">
+						  <div class="panel-heading">
+								<h3 class="panel-title">Rights</h3>
+						  </div>
+						  <!-- Table -->
+                    <table class="table table-bordered">
+                    	<thead>
+                    		<tr>
+                    			<th>&nbsp;</th>
+                    			<th class="text-center">View</th>
+                    			<th class="text-center">Edit</th>
+                    			<th class="text-center">Delete</th>
+                    		</tr>
+                    	</thead>
+                        <tbody>
+                            <tr>
+                                <td>User</td>
+                                <td class="user-rights-toggle">{{yep-nope yeppers=model.right.canViewUser}}</td>
+                                <td class="user-rights-toggle">{{yep-nope yeppers=model.right.canEditUser}}</td>
+                                <td class="user-rights-toggle">{{yep-nope yeppers=model.right.canDeleteUser}}</td>
+                            </tr>
+                            <tr>
+                                <td>Company</td>
+                                <td class="user-rights-toggle">{{yep-nope yeppers=model.right.canViewCompany}}</td>
+                                <td class="user-rights-toggle">{{yep-nope yeppers=model.right.canEditCompany}}</td>
+                                <td class="user-rights-toggle">{{yep-nope yeppers=model.right.canDeleteCompany}}</td>
+                            </tr>
+                            <tr>
+                                <td>Survey</td>
+                                <td class="user-rights-toggle">{{yep-nope yeppers=model.right.canViewSurvey}}</td>
+                                <td class="user-rights-toggle">{{yep-nope yeppers=model.right.canEditSurvey}}</td>
+                                <td class="user-rights-toggle">{{yep-nope yeppers=model.right.canDeleteSurvey}}</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+					</div>
+					
+				</div>
+				<!-- End Column 2 -->
+			</div>
+	  </div>
+</div>
+<div class="panel panel-primary">
+	  <div class="panel-heading">
+			<h3 class="panel-title">Statistics</h3>
+	  </div>
+	  <div class="panel-body">
+			Usage information about this user
+	  </div>
+</div>
