@@ -19,7 +19,8 @@ module.exports = function(environment) {
     },
     contentSecurityPolicy: {
       'font-src': "'self' data: fonts.gstatic.com",
-      'style-src': "'self' 'unsafe-inline' fonts.googleapis.com"
+      'style-src': "'self' 'unsafe-inline' fonts.googleapis.com",
+      'img-src':"*"
     }
   };
 
