@@ -21,7 +21,7 @@
   "devDependencies": {
     "broccoli-asset-rev": "^2.0.2",
     "connect-restreamer": "^1.0.2",
-    "ember-cli": "0.2.3",
+    "ember-cli": "0.2.5",
     "ember-cli-app-version": "0.3.3",
     "ember-cli-babel": "^4.0.0",
     "ember-cli-bootswatch": "0.1.4",
@@ -44,7 +44,7 @@
     "ember-validations": "^2.0.0-alpha.3",
     "express": "^4.12.3",
     "glob": "^4.5.3",
-    "liquid-fire": "git://github.com/ef4/liquid-fire",
+    "liquid-fire": "0.19.3",
     "morgan": "^1.5.2"
   }
 }
